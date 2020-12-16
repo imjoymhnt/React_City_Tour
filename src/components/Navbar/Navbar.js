@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../logo.svg'
 import './navbar.scss';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     return (
@@ -9,8 +10,8 @@ export default function Navbar() {
                 <img src={logo} alt="Logo"/>
                 <ul className="nav-links">
                     <li><a href="/" className="nav-link">home</a></li>
-                    <li><a href="/" className="nav-link">about</a></li>
-                    <li><a href="/" className="nav-link active">tour</a></li>
+                    <li><Link to="about" className="nav-link">about</Link></li>
+                    <li><Link to="/" className="nav-link">tour</Link></li>
                 </ul>
             </nav>
         </React.Fragment>

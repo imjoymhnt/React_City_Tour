@@ -5,17 +5,20 @@ import { tourData } from '../../tourData';
 
 export default class TourList extends Component {
     state = {
-        tours: tourData
+        tours: tourData,
     }
     removeTour = (id) => {
-        console.log(id);
+        const newTours = this.state.tours.filter((tour) => tour.id !== id)
+        this.setState({
+            tours: newTours
+        })
     }
+    
 
     render() {
         const {tours} = this.state
         return (
             <div className="tourlist">
-                <h2>This is the tour list</h2>
                 {tours.map((tour) => (<Tour key={tour.id} tour={tour} removeTour={this.removeTour} />))}
             </div>
         )
